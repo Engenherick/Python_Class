@@ -16,4 +16,4 @@ print(texto)
 texto = ("A Cidade do {cidade} com uma margem de lucro de {margem_de_lucro}% teve um lucro de R${lucro}").format(cidade = 'Vaticano', lucro = 15000, margem_de_lucro = 0.23)
 print(texto)
 
-############################## Após alterações
+############################## Após alterações realizadas
