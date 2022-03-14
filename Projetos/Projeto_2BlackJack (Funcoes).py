@@ -3,9 +3,13 @@ import random
 baralhoValores = {'A': [1,10] , '2': 2, '3': 3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'J':10, 'Q':10, 'K':10 }
 
 # F = Ficar // C = Comprar // D = Dobrar // S = Dividir
+
+def instrucoes():
+    pass
+
 def contagemPontosJogador(mãoAtualJogador):
 
-    baralhoValores = {'A': [1,10] , '2': 2, '3': 3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'J':10, 'Q':10, 'K':10 }
+    global baralhoValores
     sumPontos = 0
 
     for i in range(0,len(mãoAtualJogador)):
@@ -124,7 +128,7 @@ def primeiraRodada():
 print("Bem vindo ao BlackJack21Game!")
 jogadorNick = input("Para iniciarmos, informe seu nome:")
 
-if input("Boas vindas %s gostaria de entender como se joga?" %jogadorNick) == 'Y': Instrucoes()
+if input("Boas vindas %s gostaria de entender como se joga?" %jogadorNick) == 'Y': instrucoes()
 else: primeiraRodada()
 
 print("Deseja jogar novamente ", jogadorNick, "? opções: S / N")
@@ -134,21 +138,3 @@ while novamente == 'S':
     primeiraRodada()
     print("Deseja jogar novamente ", jogadorNick, "? opções: S / N")
     novamente = input()
-
-'''
-while sumPontos < 21:
-
-    print("O que deseja fazer?")
-    opcoesJogada()
-    if input("O que deseja fazer?") == 'Y':
-
-        cartaAtual = random.choice(baralhoCartas)
-        baralhoCartas.remove(cartaAtual)
-        mãoAtualJogador.append(cartaAtual)
-
-        print( 'Mão: ', mãoAtualJogador )
-        print( 'Carta Atual: ', cartaAtual )
-        print( 'Soma de Pontos: ', sumPontos )
-
-    else: break
-'''
