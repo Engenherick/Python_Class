@@ -1,8 +1,8 @@
-from Python_Class.Projetos.blackjack.dealer import Dealer
-from Python_Class.Projetos.blackjack.jogador import Jogador
-from Python_Class.Projetos.blackjack.jogo import Jogo
 
 
+from dealer import Dealer
+from jogador import Jogador
+from jogo import Jogo
 print("Bem vindo ao BlackJack21Game!")
 
 jogadorNick = input("Para iniciarmos, informe seu nome:")
