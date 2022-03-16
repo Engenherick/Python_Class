@@ -1,15 +1,20 @@
 import random
 from time import time
+from jogador import Jogador
 
 from dealer import Dealer
 
 
 class Jogo:
-    def __init__(self, jogador, dealer) -> None:
+    def __init__(self, jogador:Jogador):
         self.baralhoValores = {'A': [1,11] , '2': 2, '3': 3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'J':10, 'Q':10, 'K':10 }
         self.baralhoCartas = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'] * 4
-        self.jogador = jogador.setBaralho(self.baralhoCartas)
-        self.dealer = dealer.setBaralho(self.baralhoCartas)
+        self.jogador = jogador
+        self.dealer = Dealer()
+
+        self.jogador.setBaralho(self.baralhoCartas)
+        self.dealer.setBaralho(self.baralhoCartas)
+        
 
     def instrucoes():
         pass
@@ -24,7 +29,7 @@ class Jogo:
     def iniciar(self):
         self.__distribuirCartas()
 
-        self.opcoes(self)
+        self.opcoes()
         
     def opcoes(self): 
         listaOpcao = { "M": "Manter" , "P": "Pedir" , "D": "Dobrar" }
