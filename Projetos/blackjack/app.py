@@ -1,23 +1,25 @@
-
-
 from dealer import Dealer
 from jogador import Jogador
 from jogo import Jogo
-print("Bem vindo ao BlackJack21Game!")
 
-jogadorNick = input("Para iniciarmos, informe seu nome:")
+def run():
+    print("Bem vindo ao BlackJack21Game!")
 
-jogador = Jogador(jogadorNick)
-dealer = Dealer()
-jogo = Jogo(jogador, dealer)
+    jogadorNick = input("Para iniciarmos, informe seu nome:")
 
-if input("Boas vindas %s gostaria de entender como se joga?" %jogador.nick) == 'Y': jogo.instrucoes()
-else: jogo.iniciar()
+    jogador = Jogador(jogadorNick)
+    jogo = Jogo(jogador)
 
-print("Deseja jogar novamente ", jogador.nick, "? opções: S / N")
-novamente = input()
+    if input("Boas vindas %s gostaria de entender como se joga?" %jogador.nick) == 'Y': jogo.instrucoes()
+    else: jogo.iniciar()
 
-while novamente == 'S':
-    jogo.iniciar()
     print("Deseja jogar novamente ", jogador.nick, "? opções: S / N")
     novamente = input()
+
+    while novamente == 'S':
+        jogo.iniciar()
+        print("Deseja jogar novamente ", jogador.nick, "? opções: S / N")
+        novamente = input()
+
+if __name__ == '__main__':
+    run()
